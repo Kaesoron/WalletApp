@@ -3,7 +3,7 @@ package unitTests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.kaesoron.wallet.dto.WalletOperationRequest;
-import org.kaesoron.wallet.entity.Wallet;
+import org.kaesoron.wallet.model.Wallet;
 import org.kaesoron.wallet.enums.OperationType;
 import org.kaesoron.wallet.exceptions.InsufficientFundsException;
 import org.kaesoron.wallet.exceptions.WalletNotFoundException;

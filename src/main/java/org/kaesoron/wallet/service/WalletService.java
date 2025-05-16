@@ -4,7 +4,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.kaesoron.wallet.exceptions.WalletNotFoundException;
 import org.kaesoron.wallet.dto.WalletOperationRequest;
-import org.kaesoron.wallet.entity.Wallet;
+import org.kaesoron.wallet.model.Wallet;
 import org.kaesoron.wallet.repository.WalletRepository;
 import org.springframework.stereotype.Service;
 

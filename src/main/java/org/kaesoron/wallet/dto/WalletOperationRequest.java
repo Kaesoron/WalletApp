@@ -20,6 +20,7 @@ public class WalletOperationRequest {
     @NotNull
     private OperationType operationType;
 
+    @NotNull
     @Positive
-    private long amount;
+    private Long amount;
 }

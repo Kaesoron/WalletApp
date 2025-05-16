@@ -40,6 +40,7 @@ public class GlobalExceptionHandler {
 
         Map<String, Object> response = new HashMap<>();
         response.put("timestamp", Instant.now());
+        response.put("status", HttpStatus.BAD_REQUEST.value());
         response.put("error", "Validation Failed");
         response.put("messages", errors);
         return ResponseEntity.badRequest().body(response);

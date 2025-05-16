@@ -1,4 +1,4 @@
-package org.kaesoron.wallet.entity;
+package org.kaesoron.wallet.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
