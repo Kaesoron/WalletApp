@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.Instant;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestControllerAdvice
@@ -28,8 +29,13 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> handleValidation(MethodArgumentNotValidException ex) {
-        var errors = ex.getBindingResult().getFieldErrors().stream()
-                .map(field -> Map.of("field", field.getField(), "message", field.getDefaultMessage()))
+        List<Map<String, String>> errors = ex.getBindingResult().getFieldErrors().stream()
+                .map(field -> {
+                    Map<String, String> error = new HashMap<>();
+                    error.put("field", field.getField());
+                    error.put("message", field.getDefaultMessage());
+                    return error;
+                })
                 .toList();
 
         Map<String, Object> response = new HashMap<>();
