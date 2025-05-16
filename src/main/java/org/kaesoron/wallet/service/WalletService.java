@@ -2,7 +2,7 @@ package org.kaesoron.wallet.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.kaesoron.wallet.dto.WalletNotFoundException;
+import org.kaesoron.wallet.exceptions.WalletNotFoundException;
 import org.kaesoron.wallet.dto.WalletOperationRequest;
 import org.kaesoron.wallet.entity.Wallet;
 import org.kaesoron.wallet.repository.WalletRepository;
@@ -20,6 +20,10 @@ public class WalletService {
     public void processOperation(WalletOperationRequest request) {
         Wallet wallet = walletRepository.findByIdForUpdate(request.getWalletId())
                 .orElseThrow(() -> new WalletNotFoundException("Wallet not found: " + request.getWalletId()));
+
+        if (request.getOperationType() == null) {
+            throw new IllegalArgumentException("Operation type must be provided");
+        }
 
         switch (request.getOperationType()) {
             case DEPOSIT -> wallet.deposit(request.getAmount());

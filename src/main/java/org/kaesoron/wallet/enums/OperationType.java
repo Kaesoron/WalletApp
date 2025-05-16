@@ -1,4 +1,4 @@
-package org.kaesoron.wallet.service;
+package org.kaesoron.wallet.enums;
 
 public enum OperationType {
     DEPOSIT,

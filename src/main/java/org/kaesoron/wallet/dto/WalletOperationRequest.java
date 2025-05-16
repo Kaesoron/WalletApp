@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.kaesoron.wallet.service.OperationType;
+import org.kaesoron.wallet.enums.OperationType;
 
 import java.util.UUID;
 

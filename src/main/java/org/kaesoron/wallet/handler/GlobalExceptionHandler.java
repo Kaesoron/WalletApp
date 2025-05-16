@@ -1,6 +1,6 @@
 package org.kaesoron.wallet.handler;
 
-import org.kaesoron.wallet.dto.WalletNotFoundException;
+import org.kaesoron.wallet.exceptions.WalletNotFoundException;
 import org.kaesoron.wallet.exceptions.InsufficientFundsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
